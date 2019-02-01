@@ -1,13 +1,10 @@
 class Room():
-    #create a room
     def __init__(self, room_name):         #defines constructor method - tells python to create an object of this class
         self.name = room_name        #define some attributes
         self.description = None
         self.linked_rooms = {}
         self.character = None
-        self.stuff = {}
 
-    #Describe the room
     def set_description(self, room_description):
         self.description = room_description
 
@@ -26,16 +23,6 @@ class Room():
     def link_room(self, room_to_link, direction):
         self.linked_rooms[direction] = room_to_link
         #print(self.name + " linked rooms :" + repr(self.linked_rooms))
-
-    def room_items(self, thing_in_room, qty=1):
-        self.stuff[thing_in_room] = qty
-        #print(self.name + " linked rooms :" + repr(self.linked_rooms))
-
-    def get_stuff(self):
-        print("You can take:")
-        for i in self.stuff:
-            print("   " + i + " x " + str(self.stuff[i]))
-
 
     def get_details(self):
         print(self.name)
